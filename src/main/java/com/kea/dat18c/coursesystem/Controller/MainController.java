@@ -24,4 +24,12 @@ public class MainController {
         return "teacher";
     }
 
+    @GetMapping(value = "/login")
+    public String getLoginPage(){
+        return "login";
+    }
+    @GetMapping(value = "/logout-success")
+    public String getLogoutPage(){
+        return "logout";
+    }
 }
