@@ -10,4 +10,10 @@ public class MainController {
     public String frontPage(){
         return "index";
     }
+
+    @GetMapping("/studentlogin")
+    public String studentView(){
+        return "student";
+    }
+
 }
