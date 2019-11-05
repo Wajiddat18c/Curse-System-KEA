@@ -16,4 +16,9 @@ public class MainController {
         return "student";
     }
 
+    @GetMapping("/teacherlogin")
+    public String teacherView(){
+        return "teacher";
+    }
+
 }

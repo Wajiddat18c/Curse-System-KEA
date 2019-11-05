@@ -1,4 +1,4 @@
-package com.kea.dat18c.coursesystem.auth;
+package com.kea.dat18c.coursesystem.auth.Student;
 
 
 import org.springframework.security.core.GrantedAuthority;

@@ -1,4 +1,4 @@
-package com.kea.dat18c.coursesystem.auth;
+package com.kea.dat18c.coursesystem.auth.Student;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "studentuser")
 public class Student {
     @Id
     @Column(name = "USER_ID")
