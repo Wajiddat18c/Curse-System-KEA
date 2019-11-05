@@ -1,35 +1,43 @@
-package com.kea.dat18c.coursesystem.auth.Student;
+package com.kea.dat18c.coursesystem.auth.User;
 
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
-public class StudentPrincipal implements UserDetails {
+public class UserPrincipal implements UserDetails {
 
-    private Student student;
+    private User user;
+    private List<AuthGroup>authGroups;
 
-    StudentPrincipal(Student student){
+    UserPrincipal(User user, List<AuthGroup>authGroups){
         super();
-        this.student = student;
+        this.user = user;
+        this.authGroups = authGroups;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("USER"));
+        if (null == authGroups){
+            return Collections.emptySet();
+        }
+        Set <SimpleGrantedAuthority> grantedAuthorities = new HashSet<>();
+        authGroups.forEach(group ->{
+            grantedAuthorities.add(new SimpleGrantedAuthority(group.getAuthGroup()));
+        });
+        return grantedAuthorities;
     }
 
     @Override
     public String getPassword() {
-        return this.student.getPassword();
+        return this.user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return this.student.getUsername();
+        return this.user.getUsername();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.kea.dat18c.coursesystem.auth.Student;
+package com.kea.dat18c.coursesystem.auth.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "studentuser")
-public class Student {
+@Table(name = "user")
+public class User {
     @Id
     @Column(name = "USER_ID")
     private int id;
@@ -16,10 +16,10 @@ public class Student {
     @Column(name = "PASSWORD")
     private String password;
 
-    public Student() {
+    public User() {
     }
 
-    public Student(int id, String username, String password) {
+    public User(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
