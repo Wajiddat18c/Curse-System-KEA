@@ -5,6 +5,7 @@ import com.kea.dat18c.coursesystem.Repository.CourseInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,5 +39,8 @@ public class CourseInformationService {
         return null;
     }
 
+    public List<CourseInformation> getAll(){
+        return (List<CourseInformation>) courseInformationRepository.findAll();
+    }
 
 }
