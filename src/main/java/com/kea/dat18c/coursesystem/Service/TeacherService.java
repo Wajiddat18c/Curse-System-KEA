@@ -19,9 +19,11 @@ public class TeacherService {
     public void create(Teacher teacher){
         teacherRepository.save(teacher);
     }
+
     public void delete(String email){
         teacherRepository.deleteById(email);
     }
+
     public void update(Teacher teacher){
         teacherRepository.save(teacher);
     }
