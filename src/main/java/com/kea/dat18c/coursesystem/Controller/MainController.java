@@ -1,10 +1,10 @@
 package com.kea.dat18c.coursesystem.Controller;
 
-<<<<<<< HEAD
+
 import com.kea.dat18c.coursesystem.Service.CourseInformationService;
-=======
+
 import com.kea.dat18c.coursesystem.Model.Teacher;
->>>>>>> 6cec1e698ecf1cca2a3138f419edddbab4cf0d0c
+
 import com.kea.dat18c.coursesystem.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -56,7 +56,7 @@ public class MainController {
         return "showTeachers";
     }
 
-<<<<<<< HEAD
+
     @GetMapping("/showCourse")
     @PreAuthorize("hasRole('ROLE_STUDENT')")
     public String showCourse(Model model){
@@ -64,7 +64,7 @@ public class MainController {
         return "showCourseInformation";
     }
 
-=======
+
     @GetMapping("updateTeachers/{email}")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String updateTeachers(@PathVariable("email") String email, Model model){
@@ -77,5 +77,5 @@ public class MainController {
         teacherService.update(teacher);
         return "redirect:/showTeachers";
     }
->>>>>>> 6cec1e698ecf1cca2a3138f419edddbab4cf0d0c
+
 }
