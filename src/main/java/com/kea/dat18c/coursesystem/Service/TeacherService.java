@@ -5,6 +5,7 @@ import com.kea.dat18c.coursesystem.Repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,6 +31,9 @@ public class TeacherService {
             return find.get();
         }
         return null;
+    }
+    public List<Teacher>getAll(){
+        return (List<Teacher>) teacherRepository.findAll();
     }
 
 }
