@@ -1,5 +1,6 @@
 package com.kea.dat18c.coursesystem.Controller;
 
+import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 import com.kea.dat18c.coursesystem.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @Autowired
     TeacherService teacherService;
+    @Autowired
+    CourseInformationService courseInformationService;
 
     @GetMapping("/")
     public String frontPage(){
@@ -45,4 +48,12 @@ public class MainController {
 
         return "showTeachers";
     }
+
+    @GetMapping("/showCourse")
+    @PreAuthorize("hasRole('ROLE_STUDENT')")
+    public String showCourse(Model model){
+        model.addAttribute("courseInformations", courseInformationService.getAll());
+        return "showCourseInformation";
+    }
+
 }

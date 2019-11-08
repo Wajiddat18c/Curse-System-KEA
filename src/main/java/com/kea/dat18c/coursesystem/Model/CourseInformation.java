@@ -1,5 +1,6 @@
 package com.kea.dat18c.coursesystem.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,19 +9,25 @@ import javax.persistence.Table;
 @Table(name = "course_information")
 public class CourseInformation {
     @Id
+    @Column(name = "Id_Course")
     private int id;
     private String course;
+    @Column(name = "semester")
     private int semester;
     private int ects;
     private String course_language;
+    @Column(name = "min_of_students")
     private int min_num_of_student;
+
+    @Column(name = "max_of_students")
     private int max_num_of_student;
+    @Column(name="prerequisites")
     private String prerequisites;
     private String learning_outcome;
     private String content;
     private String learning_activities;
     private String exam_form;
-    private String teacher_Email;
+    private String teacher_email;
 
     public CourseInformation() {
     }
@@ -38,7 +45,7 @@ public class CourseInformation {
         this.content = content;
         this.learning_activities = learning_activities;
         this.exam_form = exam_form;
-        this.teacher_Email = teacher_Email;
+        this.teacher_email = teacher_Email;
     }
 
     public int getId() {
@@ -138,10 +145,10 @@ public class CourseInformation {
     }
 
     public String getTeacher_Email() {
-        return teacher_Email;
+        return teacher_email;
     }
 
     public void setTeacher_Email(String teacher_Email) {
-        this.teacher_Email = teacher_Email;
+        this.teacher_email = teacher_Email;
     }
 }
