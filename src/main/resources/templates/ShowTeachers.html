@@ -31,7 +31,7 @@
             <th>Email</th>
             <th>Fornavn</th>
             <th>Efternavn</th>
-<!--            <th>Opdatere</th>-->
+            <th>Opdatere</th>
 <!--            <th>Slet</th>-->
         </tr>
         </thead>
@@ -41,7 +41,7 @@
         <td> <span th:text="${teacher.email}">Produkt</span> </td>
         <td><span th:text="${teacher.first_name}">Pris</span></td>
         <td><span th:text="${teacher.last_name}">description</span></td>
-<!--        <td><a th:href="@{'/update/' + ${product.id}}">Tryk her</a></td>-->
+        <td><a th:href="@{'/updateTeachers/' + ${teacher.email}}">Tryk her</a></td>
 <!--        <td><a style="color: red" th:href="@{'/delete/' + ${product.id}}">Tryk her</a></td>-->
         </tr>
         </tbody>
