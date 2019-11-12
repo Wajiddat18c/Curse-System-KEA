@@ -78,4 +78,17 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+    @GetMapping("/createTeacher")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String  createTeachers(){
+        return "showTeachers";
+    }
+
+    @PostMapping("createTeacher")
+    public String createTeachers(@ModelAttribute Teacher teacher)
+    {
+        teacherService.create(teacher);
+        return "redirect:/showTeachers";
+    }
+
 }
