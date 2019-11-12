@@ -1,61 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Create Course</title>
+  <meta charset="UTF-8">
+  <title>Opret valgfag</title>
 </head>
 <body>
 
-<h1>
-    Liste over alle valgfag
-</h1>
+<h1>Opret nyt lærer</h1>
 
-<div>
+<form action="/createCourse" method="post">
+  <input type="text" name="course" placeholder="kursus">
+  <input type="text" name="semester" placeholder="semester">
+  <input type="text" name="ects" placeholder="ECTS">
+  <input type="text" name="course_language" placeholder="Kursets sprog">
+  <input type="text" name="min_num_of_student" placeholder="Minimum antal studerende">
+  <input type="text" name="max_num_of_student" placeholder="Maximum antal studerende">
+  <input type="text" name="prerequisites" placeholder="Forudsætninger for kuset">
+  <input type="text" name="learning_outcome" placeholder="Udbytte af undervisningen">
+  <input type="text" name="content" placeholder="Indhold af undervisningen">
+  <input type="text" name="learning_activities" placeholder="Lærings udbytte">
+  <input type="text" name="exam_form" placeholder="Eksamens form">
+  <input type="text" name="teacher_email" placeholder="Læren's mail">
+  <button type="submit">Opret</button>
+</form>
 
-    <table class="table table-condensed">
-      <thead>
-      <tr>
-
-      <th>Kurser</th>
-      <th>Semester</th>
-      <th>ECTS</th>
-      <th>Hvilket Sprog?</th>
-      <th>Minimum antal af studerende</th>
-      <th>Maximum antal af studerende</th>
-      <th>Forudsætninger</th>
-      <th>Udbyttet ved undervisningen</th>
-      <th>Indhold i undervisningen</th>
-      <th>Læring procceser</th>
-      <th>Eksamens form</th>
-      <th>Underviserens navn</th>
-
-      </tr>
-      </thead>
-
-        <tbody>
-        <tr>
-        <p th:each="CourseInformation : courseInformations" ></p>
-
-        <td> <span th:text="${CourseInformation.course}">Kursus</span> </td>
-        <td><span th:text="${CourseInformation.semester}">Semester</span></td>
-        <td><span th:text="${CourseInformation.ects}">ECTS</span></td>
-        <td><span th:text="${CourseInformation.course_language}">Sprog</span></td>
-        <td><span th:text="${CourseInformation.min_num_of_student}">Minimum Antal studerende</span></td>
-        <td><span th:text="${CourseInformation.max_num_of_student}">Maximum Antal studerende</span></td>
-        <td><span th:text="${CourseInformation.prerequisites}">Forudsætninger for kurset</span></td>
-        <td><span th:text="${CourseInformation.learning_outcome}">Udbytte ved undervisningen</span></td>
-        <td><span th:text="${CourseInformation.content}">Indhold i undervisningen</span></td>
-        <td><span th:text="${CourseInformation.learning_activities}">Lærings procceser</span></td>
-        <td><span th:text="${CourseInformation.exam_form}">Eksamens form</span></td>
-        <td><span th:text="${CourseInformation.teacher_Email}">Underviseren mail</span><td>
-
-            </tr>
-        </tbody>
-
-
-
-    </table>
-</div>
 
 </body>
 </html>
