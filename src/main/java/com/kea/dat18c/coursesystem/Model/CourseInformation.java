@@ -27,6 +27,7 @@ public class CourseInformation {
     private String content;
     private String learning_activities;
     private String exam_form;
+    @Column(name="teacher_Email")
     private String teacher_email;
 
     public CourseInformation() {

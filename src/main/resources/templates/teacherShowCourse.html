@@ -40,8 +40,8 @@
             <th>Læring procceser</th>
             <th>Eksamens form</th>
             <th>Underviserens navn</th>
-            <!--            <th>Opdatere</th>-->
-            <!--            <th>Slet</th>-->
+             <th>Opdatere</th>
+            <th>Slet</th>
         </tr>
         </thead>
         <tbody>
@@ -59,8 +59,8 @@
         <td><span th:text="${CourseInformation.learning_activities}">Lærings procceser</span></td>
         <td><span th:text="${CourseInformation.exam_form}">Eksamens form</span></td>
         <td><span th:text="${CourseInformation.teacher_Email}">Underviseren mail</span></td>
-        <!--        <td><a th:href="@{'/update/' + ${product.id}}">Tryk her</a></td>-->
-        <!--        <td><a style="color: red" th:href="@{'/delete/' + ${product.id}}">Tryk her</a></td>-->
+         <td><a th:href="@{'/updateCourse/' + ${CourseInformation.id}}">Tryk her</a></td>
+        <td><a style="color: red" th:href="@{'/deletec/' + ${CourseInformation.id}}">Tryk her</a></td>
         </tr>
         </tbody>
     </table>

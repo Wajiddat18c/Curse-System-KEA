@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.persistence.Id;
+
 @Controller
 public class MainController {
     @Autowired
@@ -87,6 +89,19 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+    @GetMapping("/updateCourse/{id}")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String updateCourse(@PathVariable("id") int id, Model model){
+        model.addAttribute("courseInformations",courseInformationService.findById(id));
+        return "updateCourse";
+    }
+
+    @PostMapping("/updateCourse")
+    public String updateCourse(@ModelAttribute CourseInformation courseInformation){
+        courseInformationService.update(courseInformation);
+        return "redirect:/teacherShowCourse";
+    }
+
     @GetMapping("/createTeacher")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String  createTeachers(){
@@ -105,13 +120,13 @@ public class MainController {
     @GetMapping("/createCourse")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String createCourse(){
-        return createCourse();
+        return "createCourse";
     }
 
     @PostMapping("createCourse")
     public String createCourse(@ModelAttribute CourseInformation courseInformation) {
         courseInformationService.create(courseInformation);
-        return "redirect:/TeacherShowCourse";
+        return "redirect:/teacherShowCourse";
     }
 
     @GetMapping("/delete/{id}")
@@ -119,5 +134,11 @@ public class MainController {
     {
         teacherService.delete(eMail);
         return "redirect:/showTeachers";
+    }
+
+    @GetMapping("/deletec/{id}")
+    public String deleteCourse(@PathVariable("id") int id ){
+        courseInformationService.delete(id);
+        return "redirect:/teacherShowCourse";
     }
 }
