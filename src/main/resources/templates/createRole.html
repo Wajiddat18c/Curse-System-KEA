@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret user</title>
+</head>
+<body>
+
+<h1>Opret ny user</h1>
+
+<form action="/createRole" method="post">
+    <label for="username">Username: </label>
+    <select id="username" name="username">
+        <span th:each="user : ${users}">
+        <option th:value="${user.username}" th:text="${user.username}"></option>
+        </span>
+    </select>
+    <input type="text" name="authGroup" placeholder="Auth Group">
+    <button type="submit">Opret</button>
+</form>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 import com.kea.dat18c.coursesystem.Model.Teacher;
 
 import com.kea.dat18c.coursesystem.Service.TeacherService;
+import com.kea.dat18c.coursesystem.auth.User.AuthGroup;
 import com.kea.dat18c.coursesystem.auth.User.User;
 import com.kea.dat18c.coursesystem.auth.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,13 @@ public class MainController {
     public String showUsers(Model model){
         model.addAttribute("users", userService.getAll());
         return "showUsers";
+    }
+
+    @GetMapping("/showRoles")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String showRoles(Model model){
+        model.addAttribute("roles", userService.getUserGroup());
+        return "showRoles";
     }
 
     @GetMapping("/showTeachers")
@@ -156,6 +164,20 @@ public class MainController {
     public String createUsers(@ModelAttribute User user){
         userService.create(user);
         return "redirect:/showUsers";
+    }
+
+    @GetMapping("/createRole")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String createRole(Model model){
+        model.addAttribute("users", userService.getAll());
+        return "createRole";
+    }
+
+    @PostMapping("createRole")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String createRole(@ModelAttribute AuthGroup authGroup){
+        userService.saveRole(authGroup);
+        return "redirect:/showRoles";
     }
 
 

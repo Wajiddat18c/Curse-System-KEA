@@ -10,45 +10,45 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>Roles</title>
 </head>
 <body>
-    <h1>
-        List over all users
-    </h1>
+<h1>
+    List over all user roles
+</h1>
 
-    <p>
+<p>
     <a href="/adminlogin">Back</a>
-    </p>
+</p>
 
-    <p>
-    <a href="/createUser" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-cutlery"></span> Add user!
+<p>
+    <a href="/createRole" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-cutlery"></span> Add role!
     </a>
-    </p>
+</p>
 <div>
     <table class="table table-condensed">
         <thead>
         <tr>
             <th>
-                USER_ID
+                Role_Id
             </th>
             <th>
-                USERNAME
+                Username
             </th>
             <th>
-                PASSWORD
+                Auth Group
             </th>
         </tr>
         </thead>
         <tbody>
 
-        <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
-            <td th:text="${user.username}"></td>
-            <td th:text="${user.password}"></td>
-            <td><a th:href="@{'/updateUser/'+${user.id}}" class="btn btn-warning btn-lg">Edit</a></td>
-            <td><a th:href="@{'/deleteUser/'+${user.id}}" class="btn btn-danger btn-lg">Delete</a></td>
+        <tr th:each="role : ${roles}">
+            <td th:text="${role.id}"></td>
+            <td th:text="${role.username}"></td>
+            <td th:text="${role.authGroup}"></td>
+            <td><a th:href="@{'/updateRole/'+${role.id}}" class="btn btn-warning btn-lg">Edit</a></td>
+            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="btn btn-danger btn-lg">Delete</a></td>
         </tr>
 
         </tbody>

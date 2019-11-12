@@ -48,4 +48,11 @@ public class UserService implements UserDetailsService {
     public void update(User user){
         userRepository.save(user);
     }
+    public List<AuthGroup> getUserGroup(){
+        return (List<AuthGroup>) this.authGroupRepository.findAll();
+    }
+
+    public void saveRole(AuthGroup authGroup){
+        authGroupRepository.save(authGroup);
+    }
 }
