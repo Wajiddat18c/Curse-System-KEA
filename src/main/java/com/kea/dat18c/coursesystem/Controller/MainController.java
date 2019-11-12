@@ -7,8 +7,11 @@ import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 import com.kea.dat18c.coursesystem.Model.Teacher;
 
 import com.kea.dat18c.coursesystem.Service.TeacherService;
+import com.kea.dat18c.coursesystem.auth.User.User;
+import com.kea.dat18c.coursesystem.auth.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +27,8 @@ public class MainController {
     TeacherService teacherService;
     @Autowired
     CourseInformationService courseInformationService;
+    @Autowired
+    UserService userService;
 
     @GetMapping("/")
     public String frontPage(){
@@ -42,6 +47,10 @@ public class MainController {
         return "teacher";
     }
 
+    @GetMapping("/adminlogin")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String adminView() { return "admin"; }
+
     @GetMapping(value = "/login")
     public String getLoginPage(){
         return "login";
@@ -49,6 +58,13 @@ public class MainController {
     @GetMapping(value = "/logout-success")
     public String getLogoutPage(){
         return "logout";
+    }
+
+    @GetMapping("/showUsers")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String showUsers(Model model){
+        model.addAttribute("users", userService.getAll());
+        return "showUsers";
     }
 
     @GetMapping("/showTeachers")
@@ -115,6 +131,17 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+    @GetMapping("/createUser")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String createUsers(){
+        return "createUser";
+    }
+
+    @PostMapping("createUser")
+    public String createUsers(@ModelAttribute User user){
+        userService.create(user);
+        return "redirect:/showUsers";
+    }
 
 
     @GetMapping("/createCourse")
