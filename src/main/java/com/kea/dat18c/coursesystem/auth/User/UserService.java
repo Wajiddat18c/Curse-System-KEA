@@ -1,5 +1,6 @@
 package com.kea.dat18c.coursesystem.auth.User;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,10 @@ public class UserService implements UserDetailsService {
         }
         List<AuthGroup> authGroups = this.authGroupRepository.findByUsername(username);
         return new UserPrincipal(user, authGroups);
+    }
+
+
+    public List<User> getAll(){
+        return (List<User>) this.userRepository.findAll();
     }
 }
