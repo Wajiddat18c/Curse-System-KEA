@@ -138,6 +138,7 @@ public class MainController {
     }
 
     @PostMapping("createUser")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String createUsers(@ModelAttribute User user){
         userService.create(user);
         return "redirect:/showUsers";
@@ -167,5 +168,11 @@ public class MainController {
     public String deleteCourse(@PathVariable("id") int id ){
         courseInformationService.delete(id);
         return "redirect:/teacherShowCourse";
+    }
+    @GetMapping("/deleteUser/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String deleteUser(@PathVariable("id") int id){
+        userService.delete(id);
+        return "redirect:/showUsers";
     }
 }

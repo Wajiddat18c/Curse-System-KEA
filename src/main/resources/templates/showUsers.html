@@ -16,6 +16,9 @@
     <h1>
         List over all users
     </h1>
+    <a href="/createUser" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-cutlery"></span> Add user!
+    </a>
 <div>
     <table class="table table-condensed">
         <thead>
@@ -37,14 +40,12 @@
             <td th:text="${user.id}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.password}"></td>
+            <td><a th:href="@{'/deleteUser/'+${user.id}}" class="btn btn-danger btn-lg">Delete</a></td>
         </tr>
 
         </tbody>
     </table>
 
 </div>
-    <a href="/createUser" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-cutlery"></span> Add user!
-    </a>
 </body>
 </html>
