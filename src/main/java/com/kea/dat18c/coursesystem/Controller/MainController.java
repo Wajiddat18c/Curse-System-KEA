@@ -105,6 +105,20 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+    @GetMapping("/updateUser/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String updateUser(@PathVariable("id") int id, Model model){
+        model.addAttribute("user", userService.findById(id));
+        return "updateUser";
+    }
+
+    @PostMapping("/updateUser")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String updateUser(@ModelAttribute User user){
+        userService.update(user);
+        return "redirect:/showUsers";
+    }
+
     @GetMapping("/updateCourse/{id}")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String updateCourse(@PathVariable("id") int id, Model model){

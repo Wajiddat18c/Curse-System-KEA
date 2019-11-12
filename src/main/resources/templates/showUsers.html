@@ -40,6 +40,7 @@
             <td th:text="${user.id}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.password}"></td>
+            <td><a th:href="@{'/updateUser/'+${user.id}}" class="btn btn-warning btn-lg">Edit</a></td>
             <td><a th:href="@{'/deleteUser/'+${user.id}}" class="btn btn-danger btn-lg">Delete</a></td>
         </tr>
 
