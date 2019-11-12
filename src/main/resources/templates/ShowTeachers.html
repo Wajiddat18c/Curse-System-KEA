@@ -32,7 +32,7 @@
             <th>Fornavn</th>
             <th>Efternavn</th>
             <th>Opdatere</th>
-<!--            <th>Slet</th>-->
+            <th>Slet</th>
         </tr>
         </thead>
         <tbody>
@@ -42,13 +42,13 @@
         <td><span th:text="${teacher.first_name}">Pris</span></td>
         <td><span th:text="${teacher.last_name}">description</span></td>
         <td><a th:href="@{'/updateTeachers/' + ${teacher.email}}">Tryk her</a></td>
-<!--        <td><a style="color: red" th:href="@{'/delete/' + ${product.id}}">Tryk her</a></td>-->
+        <td><a style="color: red" th:href="@{'/delete/' + ${teacher.email}}">Tryk her</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<a href="create" class="btn btn-info btn-lg">
-    <span class="glyphicon glyphicon-cutlery"></span> Add item!
+<a href="/createTeacher" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-cutlery"></span> Add Teacher!
 </a>
 
 </body>

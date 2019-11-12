@@ -81,7 +81,7 @@ public class MainController {
     @GetMapping("/createTeacher")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String  createTeachers(){
-        return "showTeachers";
+        return "createTeacher";
     }
 
     @PostMapping("createTeacher")
@@ -91,4 +91,10 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") String eMail)
+    {
+        teacherService.delete(eMail);
+        return "redirect:/showTeachers";
+    }
 }
