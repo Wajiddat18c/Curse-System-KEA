@@ -1,6 +1,7 @@
 package com.kea.dat18c.coursesystem.Controller;
 
 
+import com.kea.dat18c.coursesystem.Model.CourseInformation;
 import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 
 import com.kea.dat18c.coursesystem.Model.Teacher;
@@ -79,6 +80,14 @@ public class MainController {
         return "showCourseInformation";
     }
 
+    @GetMapping("/teacherShowCourse")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String teacherShowCourse(Model model){
+        model.addAttribute("courseInformations", courseInformationService.getAll());
+        return "teacherShowCourse";
+    }
+
+
 
     @GetMapping("updateTeachers/{email}")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
@@ -96,7 +105,7 @@ public class MainController {
     @GetMapping("/createTeacher")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String  createTeachers(){
-        return "showTeachers";
+        return "createTeacher";
     }
 
     @PostMapping("createTeacher")
@@ -106,4 +115,24 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+
+
+    @GetMapping("/createCourse")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String createCourse(){
+        return createCourse();
+    }
+
+    @PostMapping("createCourse")
+    public String createCourse(@ModelAttribute CourseInformation courseInformation) {
+        courseInformationService.create(courseInformation);
+        return "redirect:/TeacherShowCourse";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteTeacher(@PathVariable("id") String eMail)
+    {
+        teacherService.delete(eMail);
+        return "redirect:/showTeachers";
+    }
 }
