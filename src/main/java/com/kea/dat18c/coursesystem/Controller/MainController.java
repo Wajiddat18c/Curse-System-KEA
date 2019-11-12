@@ -7,6 +7,7 @@ import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 import com.kea.dat18c.coursesystem.Model.Teacher;
 
 import com.kea.dat18c.coursesystem.Service.TeacherService;
+import com.kea.dat18c.coursesystem.auth.User.User;
 import com.kea.dat18c.coursesystem.auth.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -115,6 +116,17 @@ public class MainController {
         return "redirect:/showTeachers";
     }
 
+    @GetMapping("/createUser")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String createUsers(){
+        return "createUser";
+    }
+
+    @PostMapping("createUser")
+    public String createUsers(@ModelAttribute User user){
+        userService.create(user);
+        return "redirect:/showUsers";
+    }
 
 
     @GetMapping("/createCourse")
