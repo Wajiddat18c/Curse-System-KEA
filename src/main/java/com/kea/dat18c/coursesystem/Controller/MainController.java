@@ -242,14 +242,12 @@ public class MainController {
         return "redirect:/showUsers";
     }
 
-<<<<<<< HEAD
 
-=======
     @GetMapping("/deleteRole/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteRole(@PathVariable("id") int id){
         userService.deleteRole(id);
         return "redirect:/showRoles";
     }
->>>>>>> ca41a759621323b1273134700120a839609ed78f
+
 }
