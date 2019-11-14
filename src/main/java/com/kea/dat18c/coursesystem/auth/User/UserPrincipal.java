@@ -25,7 +25,7 @@ public class UserPrincipal implements UserDetails {
         }
         Set <SimpleGrantedAuthority> grantedAuthorities = new HashSet<>();
         authGroups.forEach(group ->{
-            grantedAuthorities.add(new SimpleGrantedAuthority(group.getAuthGroup()));
+            grantedAuthorities.add(new SimpleGrantedAuthority(group.getGroupAuth()));
         });
         return grantedAuthorities;
     }

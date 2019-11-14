@@ -13,14 +13,14 @@ public class AuthGroup {
     @Column(name = "USERNAME")
     private String username;
     @Column(name = "AUTH_GROUP")
-    private String authGroup;
+    private String groupAuth;
 
     public AuthGroup() {
     }
 
     public AuthGroup(String username, String authGroup) {
         this.username = username;
-        this.authGroup = authGroup;
+        this.groupAuth = authGroup;
     }
 
     public Long getId() {
@@ -39,11 +39,11 @@ public class AuthGroup {
         this.username = username;
     }
 
-    public String getAuthGroup() {
-        return authGroup;
+    public String getGroupAuth() {
+        return groupAuth;
     }
 
-    public void setAuthGroup(String authGroup) {
-        this.authGroup = authGroup;
+    public void setGroupAuth(String groupAuth) {
+        this.groupAuth = groupAuth;
     }
 }

@@ -10,12 +10,14 @@
 
 <form action="/createRole" method="post">
     <label for="username">Username: </label>
+    <input name="username" id="username" type="text">
+    <!--
     <select id="username" name="username">
         <span th:each="user : ${users}">
         <option th:value="${user.username}" th:text="${user.username}"></option>
         </span>
-    </select>
-    <input type="text" name="authGroup" placeholder="Auth Group">
+    </select>-->
+    <input type="text" name="groupAuth" placeholder="Auth Group">
     <button type="submit">Opret</button>
 </form>
 
