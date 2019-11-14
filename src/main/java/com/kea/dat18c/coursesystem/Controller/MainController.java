@@ -72,6 +72,12 @@ public class MainController {
         model.addAttribute("users", userService.getAll());
         return "showUsers";
     }
+    @GetMapping("/showAllApplications")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String showApplications(Model model){
+        model.addAttribute("apply", courseApplicationService.getAll());
+        return "showAllApplications";
+    }
 
     @GetMapping("/showRoles")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
