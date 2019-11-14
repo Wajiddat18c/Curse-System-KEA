@@ -123,6 +123,17 @@ public class MainController {
         teacherService.update(teacher);
         return "redirect:/showTeachers";
     }
+    @GetMapping("/updateApplication/{id}")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String updateApplications(@PathVariable("id") int id, Model model){
+        model.addAttribute("apply", courseApplicationService.findbyId(id));
+        return "updateApplication";
+    }
+    @PostMapping("updateApplication")
+    public String updateApp(@ModelAttribute CourseApplication courseApplication){
+        courseApplicationService.update(courseApplication);
+        return "redirect:/showAllApplications";
+    }
 
     @GetMapping("/updateUser/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -247,6 +258,13 @@ public class MainController {
         userService.delete(id);
         return "redirect:/showUsers";
     }
+    @GetMapping("/deleteApplication/{id}")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String deleteApp(@PathVariable("id") int id){
+        courseApplicationService.delete(id);
+        return "redirect:/showAllApplications";
+    }
+
 
 
     @GetMapping("/deleteRole/{id}")
