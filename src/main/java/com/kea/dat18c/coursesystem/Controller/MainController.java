@@ -127,6 +127,20 @@ public class MainController {
         return "redirect:/showUsers";
     }
 
+    @GetMapping("/updateRole/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String updateRole(@PathVariable("id") int id, Model model){
+        model.addAttribute("role", userService.getRole(id));
+        return "updateRole";
+    }
+
+    @PostMapping("/updateRole")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String updateRole(@ModelAttribute AuthGroup authGroup){
+        userService.saveRole(authGroup);
+        return "redirect:/showRoles";
+    }
+
     @GetMapping("/updateCourse/{id}")
     @PreAuthorize("hasRole('ROLE_TEACHER')")
     public String updateCourse(@PathVariable("id") int id, Model model){
@@ -210,5 +224,12 @@ public class MainController {
     public String deleteUser(@PathVariable("id") int id){
         userService.delete(id);
         return "redirect:/showUsers";
+    }
+
+    @GetMapping("/deleteRole/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String deleteRole(@PathVariable("id") int id){
+        userService.deleteRole(id);
+        return "redirect:/showRoles";
     }
 }
