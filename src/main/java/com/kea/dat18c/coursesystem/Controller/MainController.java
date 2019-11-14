@@ -1,7 +1,9 @@
 package com.kea.dat18c.coursesystem.Controller;
 
 
+import com.kea.dat18c.coursesystem.Model.CourseApplication;
 import com.kea.dat18c.coursesystem.Model.CourseInformation;
+import com.kea.dat18c.coursesystem.Service.CourseApplicationService;
 import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 
 import com.kea.dat18c.coursesystem.Model.Teacher;
@@ -30,6 +32,9 @@ public class MainController {
     CourseInformationService courseInformationService;
     @Autowired
     UserService userService;
+    @Autowired
+    CourseApplicationService courseApplicationService;
+
 
     @GetMapping("/")
     public String frontPage(){
@@ -192,6 +197,17 @@ public class MainController {
         courseInformationService.create(courseInformation);
         return "redirect:/teacherShowCourse";
     }
+    @GetMapping("/createApplication")
+    @PreAuthorize("hasRole('ROLE_STUDENT')")
+    public String createApplication(){
+        return "createApplication";
+    }
+    @PostMapping("createApplication")
+    public String createApplications(@ModelAttribute CourseApplication courseApplication){
+        courseApplicationService.create(courseApplication);
+        return "redirect:/showCourse";
+    }
+
 
     @GetMapping("/delete/{id}")
     public String deleteTeacher(@PathVariable("id") String eMail)
@@ -211,4 +227,6 @@ public class MainController {
         userService.delete(id);
         return "redirect:/showUsers";
     }
+
+
 }
