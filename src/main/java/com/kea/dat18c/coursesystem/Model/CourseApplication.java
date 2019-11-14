@@ -12,7 +12,6 @@ public class CourseApplication
     @Id
     @Column(name = "Application_id")
     private int id;
-    private String course;
     @Column(name = "First_name")
     private String firstName;
     @Column(name = "Last_name")
@@ -25,15 +24,13 @@ public class CourseApplication
     private String email;
     @Column(name = "Phone")
     private String phone;
-    @Column(name = "Course_information_id_Course")
+    @Column(name = "Course_infomation_Id_Course")
     private String courseInformation;
-    private int courseId;
 
     public CourseApplication(){}
 
-    public CourseApplication(int id, String course, String firstName, String lastName, String birthDay, String currentClass, String email, String phone, String courseInformation, int courseId) {
+    public CourseApplication(int id, String firstName, String lastName, String birthDay, String currentClass, String email, String phone, String courseInformation) {
         this.id = id;
-        this.course = course;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDay = birthDay;
@@ -41,7 +38,6 @@ public class CourseApplication
         this.email = email;
         this.phone = phone;
         this.courseInformation = courseInformation;
-        this.courseId = courseId;
     }
 
     public int getId() {
@@ -50,14 +46,6 @@ public class CourseApplication
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getCourse() {
-        return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
     }
 
     public String getFirstName() {
@@ -116,11 +104,4 @@ public class CourseApplication
         this.courseInformation = courseInformation;
     }
 
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
 }
