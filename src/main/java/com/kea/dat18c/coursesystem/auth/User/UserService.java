@@ -55,4 +55,12 @@ public class UserService implements UserDetailsService {
     public void saveRole(AuthGroup authGroup){
         authGroupRepository.save(authGroup);
     }
+    public AuthGroup getRole(int id){
+        long longId = id;
+        return authGroupRepository.findById(longId).get();
+    }
+    public void deleteRole(int id){
+        long longId = id;
+        authGroupRepository.deleteById(longId);
+    }
 }
