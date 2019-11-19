@@ -9,12 +9,12 @@
 <h1>Apply til course</h1>
 
 <form action="/createApplication" method="post">
-    <input type="text" name="firstName" placeholder="Firstname">
-    <input type="text" name="lastName" placeholder="lastname">
-    <input type="text" name="birthDay" placeholder="YYYY-MM-DD">
+    <input type="text" name="firstName" placeholder="Firstname" required pattern="[a-zA-Z]{2,6}">
+    <input type="text" name="lastName" placeholder="lastname" required pattern="[a-zA-Z]{2,6}">
+    <input type="text" name="birthDay" placeholder="YYYY-MM-DD" required pattern="{2,8}">
     <input type="text" name="currentClass" placeholder="Currentclass">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="phone" placeholder="phonenr">
+    <input type="text" name="email" placeholder="Email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+    <input type="text" name="phone" placeholder="phonenr" required pattern="^[0-9]*$">
     <input type="text" name="courseInformation" placeholder="FK">
     <button type="submit">Opret</button>
 </form>
