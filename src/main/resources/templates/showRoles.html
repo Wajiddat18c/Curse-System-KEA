@@ -30,6 +30,12 @@
             <th>
                 Auth Group
             </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -38,8 +44,8 @@
             <td th:text="${role.id}"></td>
             <td th:text="${role.username}"></td>
             <td th:text="${role.groupAuth}"></td>
-            <td><a th:href="@{'/updateRole/'+${role.id}}" class="btn btn-warning btn-lg">Edit</a></td>
-            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="btn btn-danger btn-lg">Delete</a></td>
+            <td><a th:href="@{'/updateRole/'+${role.id}}">Edit</a></td>
+            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="text-danger">Delete</a></td>
         </tr>
 
         </tbody>

@@ -42,7 +42,7 @@
         <td><span th:text="${teacher.last_name}">description</span></td>
         <td><span th:text="${teacher.last_name}">description</span></td>
         <td><a th:href="@{'/updateTeachers/' + ${teacher.email}}">Tryk her</a></td>
-        <td><a style="color: red" th:href="@{'/delete/' + ${teacher.email}}">Tryk her</a></td>
+        <td><a class="text-danger" th:href="@{'/delete/' + ${teacher.email}}">Tryk her</a></td>
         </tr>
         </tbody>
     </table>

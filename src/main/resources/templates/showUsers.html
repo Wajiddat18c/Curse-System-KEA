@@ -22,13 +22,19 @@
         <thead>
         <tr>
             <th>
-                USER_ID
+                Id
             </th>
             <th>
-                USERNAME
+                Username
             </th>
             <th>
-                PASSWORD
+                Password
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
             </th>
         </tr>
         </thead>
@@ -38,8 +44,8 @@
             <td th:text="${user.id}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.password}"></td>
-            <td><a th:href="@{'/updateUser/'+${user.id}}" class="btn btn-warning btn-lg">Edit</a></td>
-            <td><a th:href="@{'/deleteUser/'+${user.id}}" class="btn btn-danger btn-lg">Delete</a></td>
+            <td><a th:href="@{'/updateUser/'+${user.id}}">Edit</a></td>
+            <td><a th:href="@{'/deleteUser/'+${user.id}}" class="text-danger">Delete</a></td>
         </tr>
 
         </tbody>
