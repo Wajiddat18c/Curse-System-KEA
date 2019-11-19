@@ -12,7 +12,12 @@
     <input type="text" name="currentClass" placeholder="Currentclass">
     <input type="text" name="email" placeholder="Email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
     <input type="text" name="phone" placeholder="phonenr" required pattern="^[0-9]*$">
-    <input type="text" name="courseInformation" placeholder="FK">
+<!--    <input type="text" name="courseInformation" placeholder="FK">-->
+    <select id="course" name="courseInformation">
+    <span th:each="courseInformation : ${student}">
+        <option th:value="${courseInformation.id}" th:text="${courseInformation.course}"></option>
+        </span>
+    </select>
     <button type="submit">Opret</button>
 </form>
 
