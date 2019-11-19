@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Opret valgfag</title>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head">
 <body>
-
+<div th:replace="fragments :: navTeacher"></div>
 <h1>Opret nyt kursus</h1>
 
 <form action="/createCourse" method="post">

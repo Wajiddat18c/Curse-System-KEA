@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Opret user</title>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head">
 <body>
-
+<div th:replace="fragments :: navAdmin"></div>
 <h1>Opret ny user</h1>
 
 <form action="/createUser" method="post">
