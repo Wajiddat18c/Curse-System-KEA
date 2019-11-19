@@ -4,7 +4,7 @@
 <body>
 <div th:replace="fragments :: navStudent"></div>
 <h1>Apply til course</h1>
-
+<div class="container">
 <form action="/createApplication" method="post">
     <input type="text" name="firstName" placeholder="Firstname" required pattern="[a-zA-Z]{2,6}">
     <input type="text" name="lastName" placeholder="lastname" required pattern="[a-zA-Z]{2,6}">
@@ -20,7 +20,7 @@
     </select>
     <button type="submit">Opret</button>
 </form>
-
+</div>
 
 </body>
 </html>
