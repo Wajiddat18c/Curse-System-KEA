@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student</title>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head">
 <body>
+<div th:replace="fragments :: navStudent"></div>
+<div class="container">
     <h1>DET VIRKER</h1>
 
     <p><a href="/showCourse">Vis alle kurser </a></p>
 
     <a href="/logout">LOGOUT</a>
-
+</div>
 
 </body>
 </html>

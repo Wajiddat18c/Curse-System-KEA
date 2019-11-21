@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teacher</title>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head">
 <body>
+<div th:replace="fragments :: navTeacher"></div>
+<div class="container">
+
     <h1> Teacher virker også nu :D </h1>
 
     <p><a href="/showTeachers">Tryk her</a> Her kan du oprette/opdatere/sltette en lærer</p>
@@ -13,5 +13,6 @@
     <p> </p>
 
     <a href="/logout">LOGOUT</a>
+</div>
 </body>
 </html>

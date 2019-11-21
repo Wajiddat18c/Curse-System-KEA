@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-
-    <meta charset="UTF-8">
-    <title>Application</title>
-</head>
-
+<head th:replace="fragments :: head">
 
 <body>
+<div th:replace="fragments :: navTeacher"></div>
 
 
+<div class="container">
 <h1>
     Liste over alle Elever
 </h1>
@@ -24,8 +14,7 @@
 
 
 
-<div>
-    <table class="table table-condensed">
+    <table class="table table-condensed table-bordered table-striped">
         <thead>
         <tr>
             <th>Id</th>
@@ -37,7 +26,7 @@
             <th>Phone</th>
             <th>Kursus</th>
             <th>Opdatere</th>
-<!--            <th>Slet</th>-->
+            <th>Slet</th>
         </tr>
         </thead>
         <tbody>
@@ -52,7 +41,7 @@
         <td><span th:text="${courseApplication.phone}">Pris</span></td>
         <td><span th:text="${courseApplication.courseInformation}">description</span></td>
         <td><a th:href="@{'/updateApplication/' + ${courseApplication.id}}">Tryk her</a></td>
-        <td><a style="color: red" th:href="@{'/deleteApplication/' + ${courseApplication.id}}">Tryk her</a></td>
+        <td><a class="text-danger" th:href="@{'/deleteApplication/' + ${courseApplication.id}}">Tryk her</a></td>
         </tr>
         </tbody>
     </table>

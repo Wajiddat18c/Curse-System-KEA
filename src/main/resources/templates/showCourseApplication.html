@@ -4,10 +4,11 @@
 
 
 <body>
+
 <div th:replace="fragments :: navTeacher"></div>
 <div class="container">
 <h1>
-    Liste over alle lærer
+    List of Applicants
 </h1>
 
 
@@ -17,11 +18,16 @@
     <table class="table table-condensed table-bordered table-striped">
         <thead>
         <tr>
+            <th>Course applied to</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Birthday</th>
+            <th>Class</th>
             <th>Email</th>
-            <th>Fornavn</th>
-            <th>Efternavn</th>
-            <th>Opdatere</th>
-            <th>Slet</th>
+            <th>Phone</th>
+            <th>Course Information</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -30,15 +36,17 @@
         <td> <span th:text="${teacher.email}">Produkt</span> </td>
         <td><span th:text="${teacher.first_name}">Pris</span></td>
         <td><span th:text="${teacher.last_name}">description</span></td>
+        <td><span th:text="${teacher.last_name}">description</span></td>
+        <td><span th:text="${teacher.last_name}">description</span></td>
+        <td><span th:text="${teacher.last_name}">description</span></td>
+        <td><span th:text="${teacher.last_name}">description</span></td>
+        <td><span th:text="${teacher.last_name}">description</span></td>
         <td><a th:href="@{'/updateTeachers/' + ${teacher.email}}">Tryk her</a></td>
         <td><a class="text-danger" th:href="@{'/delete/' + ${teacher.email}}">Tryk her</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<a href="/createTeacher" class="btn btn-info btn-lg">
-    <span class="glyphicon glyphicon-cutlery"></span> Add Teacher!
-</a>
 </div>
 </body>
 </html>
