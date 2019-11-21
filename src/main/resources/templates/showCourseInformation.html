@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments :: head">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Course information</title>
+</head>
+
 
 <body>
-<div th:replace="fragments :: navStudent"></div>
-<div class="container">
+
+
 <h1>
     Liste over alle valgfag
 </h1>
@@ -13,7 +25,7 @@
 
 
 <div>
-    <table class="table table-condensed table-bordered table-striped">
+    <table class="table table-condensed">
         <thead>
         <tr>
             <th>Kurser</th>
@@ -54,11 +66,11 @@
     </table>
 </div>
 
-<a href="/createApplication">
+<a href="/createApplication" class="btn btn-info btn-lg">
     <button type="button" class="btn btn-primary btn-lg">Apply for course</button>
 </a>
 
-</div>
+
 
 </body>
 </html>

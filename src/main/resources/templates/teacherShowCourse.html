@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments :: head">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Course information</title>
+</head>
 
 
 <body>
-<div th:replace="fragments :: navTeacher"></div>
-<div class="container">
+
+
 <h1>
     Liste over alle valgfag
 </h1>
@@ -58,7 +69,7 @@
 <a href="/createCourse" class="btn btn-info btn-lg">
     <span class="glyphicon glyphicon-cutlery"></span> Add Teacher!
 </a>
-</div>
+
 
 </body>
 </html>

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments :: head">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opret valgfag</title>
+</head>
 <body>
-<div th:replace="fragments :: navTeacher"></div>
-<div class="container">
+
 <h1>Opret nyt kursus</h1>
 
 <form action="/createCourse" method="post">
@@ -21,7 +23,7 @@
   <input type="text" name="teacher_Email" placeholder="Læren's mail" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" >
   <button type="submit">Opret</button>
 </form>
-</div>
+
 
 </body>
 </html>
