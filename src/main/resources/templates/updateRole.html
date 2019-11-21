@@ -6,17 +6,17 @@
 <div class="container">
 <h1> Her kan du update role</h1>
 
-<form action="/updateRole" method="post">
-    <input type="hidden" name="id" th:value="${role.id}">
+<form class="form-inline"  action="/updateRole" method="post">
+    <input class="form-control" type="hidden" name="id" th:value="${role.id}">
     <p>
         Username : <label for="groupAuth" th:text="${role.username}" ></label>
-        <input type="hidden" id="username" name="username" th:value="${role.username}">
+        <input class="form-control" type="hidden" id="username" name="username" th:value="${role.username}">
     </p>
     <p>
         <label for="groupAuth">AuthGroup: </label>
-        <input type="text" id="groupAuth" name="groupAuth" th:value="${role.groupAuth}">
+        <input class="form-control" type="text" id="groupAuth" name="groupAuth" th:value="${role.groupAuth}">
     </p>
-    <button type="submit" class="btn btn-success btn-lg">Opdater user</button>
+    <button type="submit" class="btn btn-success">Opdater user</button>
 </form>
 
 </div>

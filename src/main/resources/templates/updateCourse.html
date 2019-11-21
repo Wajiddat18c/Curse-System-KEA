@@ -6,23 +6,23 @@
 <div class="container">
 <h1> Her kan du update valgfag</h1>
 
-<form action="/updateCourse" method="post">
-    <input type="hidden" name="id" th:value="${courseInformations.id}">
-    <input type="text" name="course" th:value="${courseInformations.course}">
-    <input type="text" name="semester" th:value="${courseInformations.semester}">
-    <input type="text" name="ects" th:value="${courseInformations.ects}">
-    <input type="text" name="course_language" th:value="${courseInformations.course_language}">
-    <input type="text" name="min_num_of_student" th:value="${courseInformations.min_num_of_student}">
-    <input type="text" name="max_num_of_student" th:value="${courseInformations.max_num_of_student}">
-    <input type="text" name="prerequisites" th:value="${courseInformations.prerequisites}">
-    <input type="text" name="learning_outcome" th:value="${courseInformations.learning_outcome}">
-    <input type="text" name="content" th:value="${courseInformations.content}">
-    <input type="text" name="learning_activities" th:value="${courseInformations.learning_activities}">
-    <input type="text" name="exam_form" th:value="${courseInformations.exam_form}">
-    <input type="text" name="teacher_Email" th:value="${courseInformations.teacher_Email}">
+<form class="form-inline"  action="/updateCourse" method="post">
+    <input class="form-control" type="hidden" name="id" th:value="${courseInformations.id}">
+    <input class="form-control" type="text" name="course" th:value="${courseInformations.course}">
+    <input class="form-control" type="text" name="semester" th:value="${courseInformations.semester}">
+    <input class="form-control" type="text" name="ects" th:value="${courseInformations.ects}">
+    <input class="form-control" type="text" name="course_language" th:value="${courseInformations.course_language}">
+    <input class="form-control" type="text" name="min_num_of_student" th:value="${courseInformations.min_num_of_student}">
+    <input class="form-control" type="text" name="max_num_of_student" th:value="${courseInformations.max_num_of_student}">
+    <input class="form-control" type="text" name="prerequisites" th:value="${courseInformations.prerequisites}">
+    <input class="form-control" type="text" name="learning_outcome" th:value="${courseInformations.learning_outcome}">
+    <input class="form-control" type="text" name="content" th:value="${courseInformations.content}">
+    <input class="form-control" type="text" name="learning_activities" th:value="${courseInformations.learning_activities}">
+    <input class="form-control" type="text" name="exam_form" th:value="${courseInformations.exam_form}">
+    <input class="form-control" type="text" name="teacher_Email" th:value="${courseInformations.teacher_Email}">
 
 
-    <button type="submit">Opdater valgfag</button>
+    <button type="submit" class="btn btn-success">Opdater valgfag</button>
 </form>
 
 </div>

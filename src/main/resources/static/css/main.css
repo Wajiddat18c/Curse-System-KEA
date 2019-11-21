@@ -1,0 +1,13 @@
+.bg-info, .bg-success, .bg-warning{
+    /*rounded edges*/
+    border-radius: 10px;
+    /* for margin on mobile devices*/
+    margin: 10px 0;
+}
+.bg-info img, .bg-success img, .bg-warning img{
+    max-width: -webkit-fill-available;
+    padding-top: 10px;
+}
+.bg-info div, .bg-success div, .bg-warning div{
+    padding-bottom: 10px;
+}

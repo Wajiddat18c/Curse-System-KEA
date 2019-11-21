@@ -6,17 +6,17 @@
 <div class="container">
 <h1> Her kan du update Application</h1>
 
-<form action="/updateApplication" method="post">
-    <input type="hidden" name="id" th:value="${apply.id}">
-    <input type="text" name="firstName" th:value="${apply.firstName}">
-    <input type="text" name="lastName" th:value="${apply.lastName}">
-    <input type="text" name="birthDay" th:value="${apply.birthDay}">
-    <input type="text" name="currentClass" th:value="${apply.currentClass}">
-    <input type="text" name="email" th:value="${apply.email}">
-    <input type="text" name="phone" th:value="${apply.phone}">
-    <input type="text" name="courseInformation" th:value="${apply.courseInformation}">
+<form class="form-inline"  action="/updateApplication" method="post">
+    <input class="form-control" type="hidden" name="id" th:value="${apply.id}">
+    <input class="form-control" type="text" name="firstName" th:value="${apply.firstName}">
+    <input class="form-control" type="text" name="lastName" th:value="${apply.lastName}">
+    <input class="form-control" type="text" name="birthDay" th:value="${apply.birthDay}">
+    <input class="form-control" type="text" name="currentClass" th:value="${apply.currentClass}">
+    <input class="form-control" type="text" name="email" th:value="${apply.email}">
+    <input class="form-control" type="text" name="phone" th:value="${apply.phone}">
+    <input class="form-control" type="text" name="courseInformation" th:value="${apply.courseInformation}">
 
-    <button type="submit">Opdater</button>
+    <button type="submit" class="btn btn-success">Opdater</button>
 </form>
 
     <div class="container">
