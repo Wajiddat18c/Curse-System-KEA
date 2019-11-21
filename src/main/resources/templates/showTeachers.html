@@ -5,7 +5,7 @@
 
 <body>
 <div th:replace="fragments :: navTeacher"></div>
-
+<div class="container">
 <h1>
     Liste over alle lærer
 </h1>
@@ -14,7 +14,7 @@
 
 
 <div>
-    <table class="table table-condensed">
+    <table class="table table-condensed table-bordered table-striped">
         <thead>
         <tr>
             <th>Email</th>
@@ -31,7 +31,7 @@
         <td><span th:text="${teacher.first_name}">Pris</span></td>
         <td><span th:text="${teacher.last_name}">description</span></td>
         <td><a th:href="@{'/updateTeachers/' + ${teacher.email}}">Tryk her</a></td>
-        <td><a style="color: red" th:href="@{'/delete/' + ${teacher.email}}">Tryk her</a></td>
+        <td><a class="text-danger" th:href="@{'/delete/' + ${teacher.email}}">Tryk her</a></td>
         </tr>
         </tbody>
     </table>
@@ -39,6 +39,6 @@
 <a href="/createTeacher" class="btn btn-info btn-lg">
     <span class="glyphicon glyphicon-cutlery"></span> Add Teacher!
 </a>
-
+</div>
 </body>
 </html>

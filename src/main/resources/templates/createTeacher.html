@@ -3,6 +3,7 @@
 <head th:replace="fragments :: head">
 <body>
 <div th:replace="fragments :: navTeacher"></div>
+<div class="container">
 <h1>Opret nyt lærer</h1>
 
 <form action="/createTeacher" method="post">
@@ -11,7 +12,7 @@
     <input type="text" name="Last_name" placeholder="last name">
     <button type="submit">Opret</button>
 </form>
-
+</div>
 
 </body>
 </html>

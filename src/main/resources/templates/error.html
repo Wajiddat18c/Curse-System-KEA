@@ -4,12 +4,13 @@
 <body>
 
 <div layout:fragment="content">
-    <div class="container main-content">
+    <div class="container main-content" style="margin-top: 2em;">
         <ul class="list-group">
             <li class="list-group-item list-group-item-danger"><h3 th:text="${error}">Status</h3></li>
             <li class="list-group-item" th:text="'Status code: '+ ${status}"></li>
         </ul>
-        <p><a href="/" th:href="@{/logout}">Back to home page</a></p>
+        <p class="text-danger"><a href="/" th:href="@{/logout}">Log out</a></p>
+        <p><a href="/" th:href="@{/}">Back to home page</a></p>
     </div>
 </div>
 
