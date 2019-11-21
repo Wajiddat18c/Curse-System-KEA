@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-
-    <meta charset="UTF-8">
-    <title>Roles</title>
-</head>
+<head th:replace="fragments :: head">
 <body>
+<div th:replace="fragments :: navAdmin"></div>
+<div class="container">
 <h1>
     List over all user roles
 </h1>
@@ -27,7 +18,7 @@
     </a>
 </p>
 <div>
-    <table class="table table-condensed">
+    <table class="table table-condensed table-bordered table-striped">
         <thead>
         <tr>
             <th>
@@ -39,6 +30,12 @@
             <th>
                 Auth Group
             </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -47,13 +44,13 @@
             <td th:text="${role.id}"></td>
             <td th:text="${role.username}"></td>
             <td th:text="${role.groupAuth}"></td>
-            <td><a th:href="@{'/updateRole/'+${role.id}}" class="btn btn-warning btn-lg">Edit</a></td>
-            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="btn btn-danger btn-lg">Delete</a></td>
+            <td><a th:href="@{'/updateRole/'+${role.id}}">Edit</a></td>
+            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="text-danger">Delete</a></td>
         </tr>
 
         </tbody>
     </table>
-
+</div>
 </div>
 </body>
 </html>
