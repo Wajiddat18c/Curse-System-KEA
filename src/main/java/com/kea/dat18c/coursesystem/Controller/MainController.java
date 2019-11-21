@@ -231,7 +231,7 @@ public class MainController {
     @GetMapping("/createApplication")
     @PreAuthorize("hasRole('ROLE_STUDENT')")
     public String createApplication(Model model){
-        model.addAttribute("courseInformation",courseApplicationService.getAll());
+        model.addAttribute("courseList", courseInformationService.getAll());
         return "createApplication";
     }
     @PostMapping("createApplication")
