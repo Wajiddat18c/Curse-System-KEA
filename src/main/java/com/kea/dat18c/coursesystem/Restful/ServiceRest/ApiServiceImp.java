@@ -18,11 +18,9 @@ public class ApiServiceImp implements ApiService {
 
     @Override
     public List<TeacherRest> getTeacher() {
-//        TeacherRest teacherRest = restTemplate.getForObject("http://35.159.46.191/teacher/" + limit, TeacherRest.class);
 
         TeacherRest[] teacher = restTemplate.getForObject(
                 "http://35.159.46.191/teacher/", TeacherRest[].class);
-//            log.info(teacher.toString());
         List<TeacherRest> searchList = Arrays.asList(teacher);
 
         return searchList;
