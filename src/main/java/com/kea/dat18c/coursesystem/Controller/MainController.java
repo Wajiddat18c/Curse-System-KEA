@@ -3,6 +3,7 @@ package com.kea.dat18c.coursesystem.Controller;
 
 import com.kea.dat18c.coursesystem.Model.CourseApplication;
 import com.kea.dat18c.coursesystem.Model.CourseInformation;
+import com.kea.dat18c.coursesystem.Restful.ServiceRest.ApiServiceImp;
 import com.kea.dat18c.coursesystem.Service.CourseApplicationService;
 import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 
@@ -34,7 +35,8 @@ public class MainController {
     UserService userService;
     @Autowired
     CourseApplicationService courseApplicationService;
-
+    @Autowired
+    ApiServiceImp apiServiceImp;
 
     @GetMapping("/")
     public String frontPage(){
@@ -108,7 +110,12 @@ public class MainController {
         model.addAttribute("courseInformations", courseInformationService.getAll());
         return "teacherShowCourse";
     }
-
+    @GetMapping("/showteacherapi")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String index(Model model){
+        model.addAttribute("teachers", apiServiceImp.getTeacher());
+        return "showteacherapi";
+    }
 
 
     @GetMapping("updateTeachers/{email}")
