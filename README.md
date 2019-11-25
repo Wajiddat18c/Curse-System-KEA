@@ -1,6 +1,7 @@
 # Curse-System-KEA
 Software Development 3. obligatoriske opgave
 
+### DEPLOY: <http://kea-course-system.herokuapp.com/> ###
 		
 Til løsning af den obligatoriske opgave har vi valgt anvende følgende patterns:
 
