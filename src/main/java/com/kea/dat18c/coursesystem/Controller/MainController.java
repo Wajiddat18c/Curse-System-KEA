@@ -3,7 +3,9 @@ package com.kea.dat18c.coursesystem.Controller;
 
 import com.kea.dat18c.coursesystem.Model.CourseApplication;
 import com.kea.dat18c.coursesystem.Model.CourseInformation;
+import com.kea.dat18c.coursesystem.Restful.ServiceRest.APIStudentService;
 import com.kea.dat18c.coursesystem.Restful.ServiceRest.ApiServiceImp;
+import com.kea.dat18c.coursesystem.Restful.ServiceRest.StudentAPI;
 import com.kea.dat18c.coursesystem.Service.CourseApplicationService;
 import com.kea.dat18c.coursesystem.Service.CourseInformationService;
 
@@ -37,6 +39,8 @@ public class MainController {
     CourseApplicationService courseApplicationService;
     @Autowired
     ApiServiceImp apiServiceImp;
+    @Autowired
+    StudentAPI studentAPI;
 
     @GetMapping("/")
     public String frontPage(){
@@ -116,7 +120,13 @@ public class MainController {
         model.addAttribute("teachers", apiServiceImp.getTeacher());
         return "showteacherapi";
     }
-
+    //Hvem skal have rettigheden til student api? student eller teacher?
+    @GetMapping("/showstudentapi")
+    @PreAuthorize("hasRole('ROLE_TEACHER')")
+    public String studIndex(Model model){
+        model.addAttribute("student", studentAPI.getStudent());
+        return "showstudentapi";
+    }
 
     @GetMapping("updateTeachers/{email}")
     @PreAuthorize("hasRole('ROLE_TEACHER')")

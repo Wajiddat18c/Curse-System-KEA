@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head">
+
+
+<body>
+<div th:replace="fragments :: navTeacher"></div>
+<h1>
+    Velkommen til min Rest!
+</h1>
+
+
+<div>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>navn</th>
+            <th>email</th>
+            <th>username</th>
+            <th>password</th>
+            <th>enabled</th>
+            <!--            <th>Opdatere</th>-->
+            <!--            <th>Slet</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr> </tr>
+        <p th:each="product : ${student}">
+        <td> <span th:text="${product.id}">Produkt</span> </td>
+        <td><span th:text="${product.name}">Pris</span></td>
+        <td><span th:text="${product.email}">Pris</span></td>
+        <td><span th:text="${product.username}">Pris</span></td>
+        <td><span th:text="${product.password}">Pris</span></td>
+        <td><span th:text="${product.enabled}">description</span></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
