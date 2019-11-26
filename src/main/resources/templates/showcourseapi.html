@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head">
+
+
+<body>
+<div th:replace="fragments :: navAdmin"></div>
+<h1>
+    Velkommen til min Rest!
+</h1>
+
+
+<div>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>navn</th>
+            <th>semester</th>
+            <th>Beskrivelse</th>
+            <th>Obligatorisk</th>
+            <th>ects</th>
+            <th>Sprog</th>
+            <th>Sprog dansk</th>
+            <th>Antal Teachers</th>
+            <th>Studieprogram</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr> </tr>
+        <p th:each="product : ${course}">
+        <td> <span th:text="${product.id}">Produkt</span> </td>
+        <td><span th:text="${product.name}">Pris</span></td>
+        <td><span th:text="${product.semester}">Pris</span></td>
+        <td><span th:text="${product.description}">Pris</span></td>
+        <td><span th:text="${product.mandatory}">Pris</span></td>
+        <td><span th:text="${product.ects}">description</span></td>
+        <td><span th:text="${product.languange}">description</span></td>
+        <td><span th:text="${product.namedanish}">description</span></td>
+        <td><span th:text="${product.numberOfTeachers}">description</span></td>
+        <td><span th:text="${product.studyprogramme}">description</span></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
