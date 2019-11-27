@@ -3,21 +3,22 @@
 <head th:replace="fragments :: head">
 <body>
 <div th:replace="fragments :: navStudent"></div>
-<h1>Apply til course</h1>
+
 <div class="container">
-<form class="form-inline"  action="/createApplication" method="post">
+    <h1>Tilmeld dig et kursus</h1>
+    <form class="form-inline"  action="/createApplication" method="post">
     <select class="form-control" id="course" name="courseInformation">
     <span th:each="course : ${courseList}">
         <option th:value="${course.id}" th:text="${course.course}"></option>
         </span>
     </select>
-    <input class="form-control" type="text" name="firstName" placeholder="First name" required pattern="[a-zA-Z]{2,6}">
-    <input class="form-control" type="text" name="lastName" placeholder="Last name" required pattern="[a-zA-Z]{2,6}">
-    <input class="form-control" type="text" name="birthDay" placeholder="YYYY-MM-DD" required pattern="{2,8}">
-    <input class="form-control" type="text" name="currentClass" placeholder="Currentclass">
-    <input class="form-control" type="text" name="email" placeholder="Email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
-    <input class="form-control" type="text" name="phone" placeholder="Phone number" required pattern="^[0-9]*$">
-    <button type="submit" class="btn btn-default">Opret</button>
+    <input class="form-control" type="text" name="firstName" placeholder="Fornavn" required pattern="[a-zA-Z]{2,6}">
+    <input class="form-control" type="text" name="lastName" placeholder="Efternavn" required pattern="[a-zA-Z]{2,6}">
+    <input class="form-control" type="text" name="birthDay" placeholder="Dato: YYYY-MM-DD" required pattern="{2,8}">
+    <input class="form-control" type="text" name="currentClass" placeholder="Din klasse">
+    <input class="form-control" type="text" name="email" placeholder="E-mail" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+    <input class="form-control" type="text" name="phone" placeholder="Telefon nummer" required pattern="^[0-9]*$">
+    <button type="submit" class="btn btn-success">Tilmeld</button>
 </form>
 </div>
 

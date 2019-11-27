@@ -28,7 +28,7 @@ public class CourseInformation {
     private String learning_activities;
     private String exam_form;
     @Column(name="teacher_Email")
-    private String teacher_email;
+    private String teacher_Email;
 
     public CourseInformation() {
     }
@@ -46,7 +46,7 @@ public class CourseInformation {
         this.content = content;
         this.learning_activities = learning_activities;
         this.exam_form = exam_form;
-        this.teacher_email = teacher_Email;
+        this.teacher_Email = teacher_Email;
     }
 
     public int getId() {
@@ -146,10 +146,10 @@ public class CourseInformation {
     }
 
     public String getTeacher_Email() {
-        return teacher_email;
+        return teacher_Email;
     }
 
     public void setTeacher_Email(String teacher_Email) {
-        this.teacher_email = teacher_Email;
+        this.teacher_Email = teacher_Email;
     }
 }

@@ -5,16 +5,14 @@
 <div th:replace="fragments :: navAdmin"></div>
 <div class="container">
 <h1>
-    List over all user roles
+    Alle bruger roller
 </h1>
 
-<p>
-    <a href="/adminlogin">Back</a>
-</p>
 
 <p>
     <a href="/createRole" class="btn btn-info">
-        <span class="glyphicon glyphicon-cutlery"></span> Add role!
+        <!--<span class="glyphicon glyphicon-cutlery"></span> Tilføj rolle-->
+        Tilføj ny rolle
     </a>
 </p>
 <div>
@@ -22,19 +20,19 @@
         <thead>
         <tr>
             <th>
-                Role_Id
+                Id
             </th>
             <th>
-                Username
+                Brugernavn
             </th>
             <th>
                 Auth Group
             </th>
             <th>
-                Edit
+                Rediger
             </th>
             <th>
-                Delete
+                Slet
             </th>
         </tr>
         </thead>
@@ -44,8 +42,8 @@
             <td th:text="${role.id}"></td>
             <td th:text="${role.username}"></td>
             <td th:text="${role.groupAuth}"></td>
-            <td><a th:href="@{'/updateRole/'+${role.id}}">Edit</a></td>
-            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="text-danger">Delete</a></td>
+            <td><a th:href="@{'/updateRole/'+${role.id}}">Ret</a></td>
+            <td><a th:href="@{'/deleteRole/'+${role.id}}" class="text-danger">Slet</a></td>
         </tr>
 
         </tbody>

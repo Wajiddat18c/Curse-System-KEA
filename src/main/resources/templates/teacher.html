@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments :: head">
 <body>
 <div th:replace="fragments :: navTeacher"></div>
 <div class="container">
 
-    <h1> Teacher virker også nu :D </h1>
-
-    <p><a href="/showTeachers">Tryk her</a> Her kan du oprette/opdatere/sltette en lærer</p>
-    <p><a href="/teacherShowCourse">Tryk her</a> Her kan du se alle valgfag </p>
-    <p><a href="/showAllApplications">Tryk her</a> Her kan du se alle tilmeldte elever </p>
-
-
-
-    <a href="/logout">LOGOUT</a>
+    <h1>Velkommen <span sec:authentication="name"></span></h1>
+    <p><a class="btn btn-info" href="/showTeachers">Rediger lærere</a></p>
+    <p><a class="btn btn-info" href="/teacherShowCourse">Rediger kurser</a></p>
+    <p><a class="btn btn-info" href="/showAllApplications">Vis tilmeldinger/elever</a></p>
 </div>
 </body>
 </html>

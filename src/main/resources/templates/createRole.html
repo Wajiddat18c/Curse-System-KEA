@@ -4,12 +4,9 @@
 <body>
 <div th:replace="fragments :: navAdmin"></div>
 <div class="container">
-<h1>Opret ny user</h1>
-<p>
-    <a href="/showRoles">Back</a>
-</p>
+<h1>Opret ny rolle</h1>
 <form class="form-inline"  action="/createRole" method="post">
-    <label for="username">Username: </label>
+    <label for="username">Bruger: </label>
     <select class="form-control" id="username" name="username">
         <span th:each="user : ${users}">
         <option th:value="${user.username}" th:text="${user.username}"></option>

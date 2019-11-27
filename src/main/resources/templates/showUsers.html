@@ -5,16 +5,13 @@
 <div th:replace="fragments :: navAdmin"></div>
 <div class="container">
     <h1>
-        List over all users
+        Alle brugere
     </h1>
 
     <p>
-    <a href="/adminlogin">Back</a>
-    </p>
-
-    <p>
     <a href="/createUser" class="btn btn-info">
-        <span class="glyphicon glyphicon-cutlery"></span> Add user!
+<!--        <span class="glyphicon glyphicon-cutlery"></span> Tilføj bruger!-->
+        Tilføj ny bruger
     </a>
     </p>
 <div>
@@ -25,16 +22,16 @@
                 Id
             </th>
             <th>
-                Username
+                Brugernavn
             </th>
             <th>
-                Password
+                Kodeord
             </th>
             <th>
-                Edit
+                Rediger
             </th>
             <th>
-                Delete
+                Slet
             </th>
         </tr>
         </thead>
@@ -44,8 +41,8 @@
             <td th:text="${user.id}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.password}"></td>
-            <td><a th:href="@{'/updateUser/'+${user.id}}">Edit</a></td>
-            <td><a th:href="@{'/deleteUser/'+${user.id}}" class="text-danger">Delete</a></td>
+            <td><a th:href="@{'/updateUser/'+${user.id}}">Ret</a></td>
+            <td><a th:href="@{'/deleteUser/'+${user.id}}" class="text-danger">Slet</a></td>
         </tr>
 
         </tbody>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments :: head">
 <body>
 <div th:replace="fragments :: navAdmin"></div>
 <div class="container">
-    <h1>Admin panel</h1>
-    <p><a href="/showUsers">Show all users</a></p>
-    <p><a href="/showRoles">Edit roles</a></p>
-    <p><a href="/logout">LOGOUT</a></p>
+    <h1>Velkommen <span sec:authentication="name"></span></h1>
+    <p><a href="/showUsers" class="btn btn-info">Rediger brugere</a></p>
+    <p><a href="/showRoles" class="btn btn-info">Rediger roller</a></p>
 
     <h2>API</h2>
-    <p><a href="/showteacherapi">Tryk her</a> Her kan du se Teachers i RestApi </p>
-    <p><a href="/showstudentapi">Tryk her</a> Her kan du se Student i RestApi </p>
-    <p><a href="/showcourseapi">Tryk her</a> Her kan du se Course i RestApi </p>
+    <p><a href="/showteacherapi" class="btn btn-success">Tryk her</a> Her kan du se Teachers i RestApi </p>
+    <p><a href="/showstudentapi" class="btn btn-success">Tryk her</a> Her kan du se Student i RestApi </p>
+    <p><a href="/showcourseapi" class="btn btn-success">Tryk her</a> Her kan du se Course i RestApi </p>
 </div>
 </body>
 </html>
